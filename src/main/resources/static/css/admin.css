@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+
+    background:#07162f;
+
+    color:white;
+
+    padding:40px;
+}
+
+.container{
+
+    width:95%;
+
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.header h1{
+
+    font-size:55px;
+}
+
+.header-buttons{
+
+    display:flex;
+
+    gap:20px;
+}
+
+/* =========================
+   TOP BUTTONS
+========================= */
+
+.create-btn,
+.dashboard-btn{
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.create-btn{
+
+    background:#22c55e;
+}
+
+.create-btn:hover{
+
+    background:#16a34a;
+
+    transform:translateY(-2px);
+}
+
+.dashboard-btn{
+
+    background:#3b82f6;
+}
+
+.dashboard-btn:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#162544;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+th, td{
+
+    padding:25px;
+
+    text-align:center;
+}
+
+th{
+
+    background:#223457;
+
+    font-size:24px;
+}
+
+td{
+
+    font-size:22px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status{
+
+    font-weight:bold;
+
+    color:#38bdf8;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+/* =========================
+   ROW DASHBOARD BUTTON
+========================= */
+
+.dashboard-btn-table{
+
+    background:#22c55e;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+    display:inline-block;
+}
+
+.dashboard-btn-table:hover{
+
+    background:#16a34a;
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   COMMON BUTTONS
+========================= */
+
+button{
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   PAUSE
+========================= */
+
+.pause-btn{
+
+    background:#f59e0b;
+}
+
+.pause-btn:hover{
+
+    background:#d97706;
+}
+
+/* =========================
+   RESUME
+========================= */
+
+.resume-btn{
+
+    background:#22c55e;
+}
+
+.resume-btn:hover{
+
+    background:#16a34a;
+}
+
+/* =========================
+   ROLLOUT
+========================= */
+
+.rollout-btn{
+
+    background:#3b82f6;
+}
+
+.rollout-btn:hover{
+
+    background:#2563eb;
+}
+
+/* =========================
+   DELETE
+========================= */
+
+.delete-btn{
+
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:25px;
+    }
+
+    .header-buttons{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+}

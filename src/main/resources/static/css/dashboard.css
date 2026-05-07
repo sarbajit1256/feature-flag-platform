@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: #02133b;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+.container {
+
+    width: 95%;
+
+    margin: auto;
+
+    padding: 40px 0;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.title h1 {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+}
+
+.title h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   ADMIN BUTTON
+========================= */
+
+.admin-btn {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: #3b82f6;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 16px 30px;
+
+    border-radius: 14px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.admin-btn:hover {
+
+    background: #2563eb;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   WINNER
+========================= */
+
+.winner-card {
+
+    background: #223457;
+
+    border-radius: 25px;
+
+    padding: 70px;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.winner-card h2 {
+
+    font-size: 60px;
+
+    margin-bottom: 40px;
+}
+
+.winner {
+
+    font-size: 120px;
+
+    font-weight: bold;
+
+    color: #2de26d;
+
+    margin-bottom: 30px;
+}
+
+.winner-status h3 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.winner-status p {
+
+    font-size: 35px;
+
+    color: #38bdf8;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+}
+
+.summary-card {
+
+    background: #223457;
+
+    border-radius: 25px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.summary-card:hover {
+
+    transform: translateY(-5px);
+}
+
+.summary-card h3 {
+
+    font-size: 30px;
+
+    margin-bottom: 40px;
+}
+
+.summary-card p {
+
+    font-size: 65px;
+
+    color: #38bdf8;
+}
+
+/* =========================
+   VARIANTS
+========================= */
+
+.variants-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+}
+
+.variant-card {
+
+    background: #223457;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.variant-card:hover {
+
+    transform: translateY(-5px);
+}
+
+.variant-card h2 {
+
+    color: #facc15;
+
+    font-size: 55px;
+
+    margin-bottom: 40px;
+}
+
+.variant-card p {
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+.value {
+
+    color: #38bdf8;
+
+    font-weight: bold;
+}
+
+/* =========================
+   CHARTS
+========================= */
+
+.charts-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.chart-card {
+
+    background: #223457;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.chart-card h2 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 28px;
+}
+
+canvas {
+
+    width: 100% !important;
+
+    height: 400px !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 1400px) {
+
+    .summary-grid,
+    .variants-grid,
+    .charts-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 900px) {
+
+    .summary-grid,
+    .variants-grid,
+    .charts-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .title h1 {
+
+        font-size: 50px;
+    }
+
+    .title h2 {
+
+        font-size: 28px;
+    }
+
+    .winner {
+
+        font-size: 80px;
+    }
+
+    .winner-card h2 {
+
+        font-size: 40px;
+    }
+
+    .summary-card p {
+
+        font-size: 45px;
+    }
+
+    .variant-card h2 {
+
+        font-size: 40px;
+    }
+
+    .variant-card p {
+
+        font-size: 22px;
+    }
+
+    .admin-btn {
+
+        font-size: 18px;
+
+        padding: 14px 22px;
+    }
+}

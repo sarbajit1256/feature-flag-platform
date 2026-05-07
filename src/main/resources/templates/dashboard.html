@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Experiment Dashboard</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/dashboard.css}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<!-- TITLE -->
+	<div class="title">
+
+	    <h1>🚀 Experiment Dashboard</h1>
+
+	    <h2>
+	        Flag:
+	        <span th:text="${flagKey}"></span>
+	    </h2>
+
+	    <!-- ADMIN BUTTON -->
+
+	    <a href="/admin/experiments"
+	       class="admin-btn">
+
+	        ⚙ Manage Experiments
+
+	    </a>
+
+	</div>
+
+
+    <!-- WINNER -->
+    <div class="winner-card">
+
+        <h2>🏆 Winner</h2>
+
+        <div class="winner"
+             id="winnerText"
+             th:text="${analytics['winner']}">
+        </div>
+
+        <div class="winner-status">
+
+            <h3>
+                Statistical Significance
+            </h3>
+
+            <p id="significanceText"
+               th:text="${analytics['statisticallySignificant']}">
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-grid">
+
+        <!-- TOTAL USERS -->
+        <div class="summary-card">
+
+            <h3>Total Users</h3>
+
+            <p id="totalUsers"
+               th:text="${analytics['summary']['totalUsers']}">
+            </p>
+
+        </div>
+
+        <!-- TOTAL CONVERSIONS -->
+        <div class="summary-card">
+
+            <h3>Total Conversions</h3>
+
+            <p id="totalConversions"
+               th:text="${analytics['summary']['totalConversions']}">
+            </p>
+
+        </div>
+
+        <!-- WINNING RATE -->
+        <div class="summary-card">
+
+            <h3>Winning Conversion Rate</h3>
+
+            <p>
+                <span id="winningRate"
+                      th:text="${analytics['summary']['winningConversionRate']}">
+                </span>%
+            </p>
+
+        </div>
+
+        <!-- ROLLOUT -->
+        <div class="summary-card">
+
+            <h3>Rollout</h3>
+
+            <p>50%</p>
+
+        </div>
+
+    </div>
+
+    <!-- VARIANTS -->
+    <div class="variants-grid">
+
+        <th:block th:each="entry : ${analytics}">
+
+            <div class="variant-card"
+                 th:if="${entry.key != 'summary'
+                 && entry.key != 'winner'
+                 && entry.key != 'statisticallySignificant'}">
+
+                <h2>
+                    Variant
+                    <span th:text="${entry.key}"></span>
+                </h2>
+
+                <!-- USERS -->
+                <p>
+                    👥 Users:
+
+                    <span class="value"
+                          th:id="'users-' + ${entry.key}"
+                          th:text="${entry.value.users}">
+                    </span>
+                </p>
+
+                <!-- CONVERSIONS -->
+                <p>
+                    🎯 Conversions:
+
+                    <span class="value"
+                          th:id="'conversions-' + ${entry.key}"
+                          th:text="${entry.value.conversions}">
+                    </span>
+                </p>
+
+                <!-- RATE -->
+                <p>
+                    📈 Conversion Rate:
+
+                    <span class="value"
+                          th:id="'rate-' + ${entry.key}"
+                          th:text="${entry.value.conversionRate}">
+                    </span>%
+                </p>
+
+                <!-- CONFIDENCE -->
+                <p>
+                    🔥 Confidence:
+
+                    <span class="value"
+                          th:id="'confidence-' + ${entry.key}"
+                          th:text="${entry.value.confidence}">
+                    </span>%
+                </p>
+
+            </div>
+
+        </th:block>
+
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts-grid">
+
+        <!-- USERS CHART -->
+        <div class="chart-card">
+
+            <h2>👥 Users Per Variant</h2>
+
+            <canvas id="usersChart"></canvas>
+
+        </div>
+
+        <!-- CONVERSION CHART -->
+        <div class="chart-card">
+
+            <h2>📈 Conversion Rate</h2>
+
+            <canvas id="conversionChart"></canvas>
+
+        </div>
+
+        <!-- CONFIDENCE CHART -->
+        <div class="chart-card">
+
+            <h2>🔥 Confidence</h2>
+
+            <canvas id="confidenceChart"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script th:src="@{/js/dashboard.js}"></script>
+
+</body>
+
+</html>
